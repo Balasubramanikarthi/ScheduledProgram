@@ -7,18 +7,16 @@ using System.Net;
 using System.Net.Mail;
 namespace ScheduledProgram
 {
-    class MessageTransfer
-    {
-        
 
-public class EmailSender
+    public class MessageTransfer
     {
+
         public void SendEmail()
         {
             // Your generated App Password goes here
-            string gmailAppPassword = "YOUR_16_DIGIT_APP_PASSWORD";
-            string fromAddress = "your.email@gmail.com";
-            string toAddress = "recipient.email@example.com";
+            string gmailAppPassword = "bjcu kfii ufay xkqz";
+            string fromAddress = "karthiselvi312004@gmail.com";
+            string toAddress = "karthikeyan.selvisubramani@gmail.com";
 
             try
             {
@@ -27,7 +25,7 @@ public class EmailSender
                     mail.From = new MailAddress(fromAddress);
                     mail.To.Add(toAddress);
                     mail.Subject = "Test Email from C#";
-                    mail.Body = "<h1>Hello!</h1><p>This is a test email sent from C# using the Gmail SMTP server.</p>";
+                    mail.Body = "<h1>Hello!</h1><p>This is a test email sent from C# using the Gmail SMTP server.</p>"+"My Name Is B.Karthikeyan ";
                     mail.IsBodyHtml = true;
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
@@ -48,4 +46,4 @@ public class EmailSender
         }
     }
 }
-}
+
