@@ -6,9 +6,8 @@ namespace ScheduledProgram
     {
         static void Main(string[] args)
         {
-           // Console.WriteLine("Hello World!");
-
-
+            var test = new MessageTransfer();
+            test.SendEmail();
         }
     }
 }

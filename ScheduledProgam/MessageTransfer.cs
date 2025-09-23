@@ -5,44 +5,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using BusinessLayer1;
 namespace ScheduledProgram
 {
 
     public class MessageTransfer
     {
+        public string gmailAppPassword = null;
+        public string fromAddress = null;
 
         public void SendEmail()
         {
             // Your generated App Password goes here
             string gmailAppPassword = "bjcu kfii ufay xkqz";
             string fromAddress = "karthiselvi312004@gmail.com";
-            string toAddress = "karthikeyan.selvisubramani@gmail.com";
+            // Get dynamic user input for 'toAddress', 'subject', and 'content'
 
-            try
-            {
-                using (MailMessage mail = new MailMessage())
-                {
-                    mail.From = new MailAddress(fromAddress);
-                    mail.To.Add(toAddress);
-                    mail.Subject = "Test Email from C#";
-                    mail.Body = "<h1>Hello!</h1><p>This is a test email sent from C# using the Gmail SMTP server.</p>"+"My Name Is B.Karthikeyan ";
-                    mail.IsBodyHtml = true;
+            Console.WriteLine("Enter the recipient's email address:");
+            var toAddress = Console.ReadLine();
 
-                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
-                    {
-                        smtp.Credentials = new NetworkCredential(fromAddress, gmailAppPassword);
-                        smtp.EnableSsl = true;
-                        smtp.UseDefaultCredentials = false;
+            Console.WriteLine("Enter the email subject:");
+            var subject = Console.ReadLine();
 
-                        smtp.Send(mail);
-                        Console.WriteLine("Email sent successfully!");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Failed to send email: " + ex.Message);
-            }
+            Console.WriteLine("Enter the email content (HTML allowed):");
+            var content = Console.ReadLine();
+
+          
+
+
+            //Create the BuiltInEmailServices object with user input
+            var mailTransfer = new BuiltInEmailServices(fromAddress, toAddress, subject, content, gmailAppPassword);
+            mailTransfer.MessageTransfer();
+
+            //Create the MailAutomatedEmail object with user input
+            //var email = new MailKitEmailService(fromAddress, toAddress, subject, content, gmailAppPassword);
+            //email.SendEmail();
+
+
         }
     }
 }
