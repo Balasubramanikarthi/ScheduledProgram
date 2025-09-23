@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer1
+namespace ScheduledProgram
 {
-    class MailKitService
+    internal class MailKitUseExprement
     {
-
     }
 }
