@@ -12,7 +12,7 @@ namespace BusinessLayer1
         public string ToAddress;
         public string Subject;
         public string Content;
-
+        
 
         public EmailSender(string fromaddress, string toaddress, string subject, string content)
         {

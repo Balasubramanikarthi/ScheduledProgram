@@ -10,4 +10,12 @@ namespace ScheduledProgram
             test.SendEmail();
         }
     }
+
+   // mailkit library -> copy of buildin method
+   //copy in  of 2nd method with the hep of mailkituseexperiment
+   //program.cs call messageteansfer
+
+
+
+
 }
