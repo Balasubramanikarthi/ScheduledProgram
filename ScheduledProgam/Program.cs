@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using CrudProgram;
 
 namespace ScheduledProgram
 {
@@ -6,14 +8,19 @@ namespace ScheduledProgram
     {
         static void Main(string[] args)
         {
-            var test = new MessageTransfer();
-            test.SendEmail();
+            //var test = new MessageTransfer();
+            //test.SendEmail();
+
+           // List<PatientDetails> details = new List<PatientDetails>();
+
+            JsonCRUDprogram list = new JsonCRUDprogram();
+            list.ChooseOption();
+
+
+
         }
     }
 
-   // mailkit library -> copy of buildin method
-   //copy in  of 2nd method with the hep of mailkituseexperiment
-   //program.cs call messageteansfer
 
 
 
