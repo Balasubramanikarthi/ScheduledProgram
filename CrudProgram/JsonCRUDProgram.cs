@@ -13,37 +13,32 @@ namespace CrudProgram
   public  class JsonCRUDProgram
     {
         private const string FilePath = "data.json";
-        public class Person
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public int Age { get; set; }
-        }
-        public List<Person> LoadData()
+       // PatientDetails patient = new PatientDetails();
+        public List<PatientDetails> LoadData()
         {
             if (!File.Exists(FilePath))
             {
-                return new List<Person>();
+                return new List<PatientDetails>();
             }
             var jsonData = File.ReadAllText(FilePath);
-            return JsonSerializer.Deserialize<List<Person>>(jsonData) ?? new List<Person>();
+            return JsonSerializer.Deserialize<List<PatientDetails>>(jsonData) ?? new List<PatientDetails>();
         }
-        public void SaveData(List<Person> people)
+        public void SaveData(List<PatientDetails> people)
         {
             var jsonData = JsonSerializer.Serialize(people, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(FilePath, jsonData);
         }
-        public void CreatePerson(Person person)
+        public void CreatePerson(PatientDetails person)
         {
             var people = LoadData();
             people.Add(person);
             SaveData(people);
         }
-        public List<Person> ReadPeople()
+        public List<PatientDetails> ReadPeople()
         {
             return LoadData();
         }
-        public void UpdatePerson(int id, Person updatedPerson)
+        public void UpdatePerson(int id, PatientDetails updatedPerson)
         {
             var people = LoadData();
             var person = people.FirstOrDefault(p => p.Id == id);
@@ -64,5 +59,6 @@ namespace CrudProgram
                 SaveData(people);
             }
         }
+
     }
 }

@@ -11,6 +11,9 @@ namespace ScheduledProgram
     internal class CRUDprogram
     {
         List<PatientDetails> patients = new List<PatientDetails>();
+
+       public JsonCRUDProgram json = new JsonCRUDProgram();
+
         public string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "data.json");
         public void ChooseOption()
         {
@@ -78,6 +81,8 @@ namespace ScheduledProgram
 
             Console.WriteLine("Enter The Patient Details ");
             Console.WriteLine();
+          //  Console.WriteLine("Enter The Patient Id ");
+            //patient.Id=Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter The Patient Name ");
             patient.Name = Console.ReadLine();
             Console.WriteLine("Enter The Patient Age ");
@@ -96,9 +101,10 @@ namespace ScheduledProgram
                 patient.MobileNumber = mobile;
                 patient.Email = email;
             }
-            patients.Add(patient);
+            patients.Add(patient);//jsonCRUDProgram 
 
             PrintDetails();
+        
 
         }
         public void UpdateDetails()
@@ -157,6 +163,7 @@ namespace ScheduledProgram
             {
 
                 Console.WriteLine();
+              //  Console.WriteLine("Patient Id : " + patients[i].Id);
                 Console.WriteLine("Patient Name : " + patients[i].Name);
                 Console.WriteLine("Patient Age : " + patients[i].Age);
                 Console.WriteLine("Patient MobileNumber : " + patients[i].MobileNumber);
@@ -174,6 +181,7 @@ namespace ScheduledProgram
                 if (patients[i].MobileNumber == mobile)
                 {
                     Console.WriteLine();
+                  //  Console.WriteLine("Patient Id : " + patients[i].Id);
                     Console.WriteLine("Patient Name : " + patients[i].Name);
                     Console.WriteLine("Patient Age : " + patients[i].Age);
                     Console.WriteLine("Patient MobileNumber : " + patients[i].MobileNumber);

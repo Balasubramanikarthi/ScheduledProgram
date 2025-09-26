@@ -10,13 +10,16 @@ namespace ScheduledProgram
         {
             //var test = new MessageTransfer();
             //test.SendEmail();
-             
-           // List<PatientDetails> details = new List<PatientDetails>();
+
+            // List<PatientDetails> details = new List<PatientDetails>();
 
             CRUDprogram list = new CRUDprogram();
             list.ChooseOption();
 
-          
+            //JsonCRUDProgram json = new JsonCRUDProgram();
+            //json.();
+
+
 
 
 
