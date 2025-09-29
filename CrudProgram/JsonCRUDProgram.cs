@@ -10,7 +10,7 @@ using System.IO;
 
 namespace CrudProgram
 {
-  public  class JsonCRUDProgram
+ /* public  class JsonCRUDProgram
     {
         private const string FilePath = "data.json";
        // PatientDetails patient = new PatientDetails();
@@ -60,5 +60,5 @@ namespace CrudProgram
             }
         }
 
-    }
+    }*/
 }

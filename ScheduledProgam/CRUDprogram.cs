@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ScheduledProgram
 {
-    internal class CRUDprogram
+   /* internal class CRUDprogram
     {
         List<PatientDetails> patients = new List<PatientDetails>();
 
-       public JsonCRUDProgram json = new JsonCRUDProgram();
+      // public JsonCRUDProgram json = new JsonCRUDProgram();
 
         public string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "data.json");
         public void ChooseOption()
@@ -208,5 +208,5 @@ namespace ScheduledProgram
             return false;
         }
 
-    }
+    }*/
 }

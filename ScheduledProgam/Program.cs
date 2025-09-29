@@ -13,21 +13,29 @@ namespace ScheduledProgram
 
             // List<PatientDetails> details = new List<PatientDetails>();
 
-            CRUDprogram list = new CRUDprogram();
+            Exercises list = new Exercises();
             list.ChooseOption();
 
             //JsonCRUDProgram json = new JsonCRUDProgram();
             //json.();
-
-
-
-
-
+           // using ScheduledProgram;
+        
+            //CRUDprogram program = new CRUDprogram();
+            //program.ChooseOption();
+            
         }
+
+
+
+
+
+
+
     }
-
-
-
-
-
 }
+
+
+
+
+
+
