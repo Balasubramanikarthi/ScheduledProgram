@@ -8,7 +8,7 @@ namespace CrudProgram
 {
    public class PatientDetails
     { 
-         public int Id { get; set; }
+        // public int Id { get; set; }
          public string Name { get; set; }
          public int Age { get; set; }
          public long MobileNumber { get; set; }
