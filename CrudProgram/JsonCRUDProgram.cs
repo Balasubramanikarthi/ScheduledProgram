@@ -20,7 +20,7 @@ namespace CrudProgram
 
     {
                 private List<PatientDetails> patients = new List<PatientDetails>();
-                public string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "data.json");
+                public string filePath = Path.Combine(/*AppDomain.CurrentDomain.BaseDirectory,*/ "Data", "data.json");
 
                 public JsonCRUDprogram()
                 {
