@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CrudProgram;
+using DataAccessLayer;
 
 namespace ScheduledProgram
 {
@@ -13,9 +14,12 @@ namespace ScheduledProgram
 
             // List<PatientDetails> details = new List<PatientDetails>();
 
-            JsonCRUDprogram list = new JsonCRUDprogram();
-            list.ChooseOption();
+            //JsonCRUDprogram list = new JsonCRUDprogram();
+            //list.ChooseOption();
 
+
+            PatientsRepository patients = new PatientsRepository();
+            patients.GetPatients();
 
 
         }
