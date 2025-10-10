@@ -16,13 +16,14 @@ namespace DataAccessLayer
         {
             try
             {
-                string connectionString = "server=DESKTOP-DDKSO40\\SQLEXPRESS;Database=batch11;User Id=sa;Password=Anaiyaan@123;";
-                string sql = $"select * from PatientsDetails";
+                string connectionString = "Server=DESKTOP-DDKSO40\\SQLEXPRESS;Database=batch11;User Id=sa;Password=Anaiyaan@123;";
+                string sql = $"exec getallpatientdetails";
 
                 var connection = new SqlConnection(connectionString);
                 connection.Open();
                 var result = connection.Query<NewPatientsDetails>(sql).ToList();
                 connection.Close();
+
 
                 return result;
 
@@ -41,19 +42,65 @@ namespace DataAccessLayer
         {
             try
             {
-                string connectionString = "Server=DESKTOP-8VD1A1F\\SQLEXPRESS;Database=batch11;User Id=sa;Password=Anaiyaan@123;";
-                string sql = $"insert into Patients values('{record.PatientName}', '{record.PatientMobileNumber}', {record.PatientEmail})";
+                string connectionString = "Server=DESKTOP-DDKSO40\\SQLEXPRESS;Database=batch11;User Id=sa;Password=Anaiyaan@123;";
+                string sql = $"insert into PatientsDetails values('{record.PatientName}', '{record.PatientMobileNumber}', '{record.PatientEmail}')";
 
                 var connection = new SqlConnection(connectionString);
                 connection.Open();
                 var result = connection.Execute(sql);
                 connection.Close();
             }
-            catch (SqlException ex)
+            
+            catch (SqlException)
             {
                 throw;
             }
-            catch (Exception ex)
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void UpdatePatient(NewPatientsDetails record)
+        {
+            try
+            {
+                string connectionString = "Server=DESKTOP-DDKSO40\\SQLEXPRESS;Database=batch11;User Id=sa;Password=Anaiyaan@123;";
+                string sql = $"UPDATE PatientsDetails SET PatientName = '{record.PatientName}', PatientMobileNumber = '{record.PatientMobileNumber}', PatientEmail = '{record.PatientEmail}' WHERE PatientId = {record.PatientId}";
+
+                var connection = new SqlConnection(connectionString);
+                connection.Open();
+                var result = connection.Execute(sql);
+                connection.Close();
+            }
+            catch (SqlException )
+            {
+                throw;
+            }
+            catch (Exception )
+            {
+                throw;
+            }
+        }
+
+
+        public void DeletePatient(int id)
+        {
+            try
+            {
+                string connectionString = "Server=DESKTOP-DDKSO40\\SQLEXPRESS;Database=batch11;User Id=sa;Password=Anaiyaan@123;";
+                string sql = $"DELETE FROM PatientsDetails WHERE PatientId = {id}";
+
+                var connection = new SqlConnection(connectionString);
+                connection.Open();
+                var result = connection.Execute(sql);
+                connection.Close();
+            }
+            catch (SqlException )
+            {
+                throw;
+            }
+            catch (Exception )
             {
                 throw;
             }

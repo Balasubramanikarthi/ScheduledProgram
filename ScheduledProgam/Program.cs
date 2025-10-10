@@ -18,8 +18,11 @@ namespace ScheduledProgram
             //list.ChooseOption();
 
 
-            PatientsRepository patients = new PatientsRepository();
-            patients.GetPatients();
+            //PatientsRepository patients = new PatientsRepository();
+           // patients.GetPatients();
+
+            PatientsMenus repo = new PatientsMenus();
+            repo.Options();
 
 
         }
