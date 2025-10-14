@@ -34,12 +34,12 @@ namespace ScheduledProgram
 
 
             //Create the BuiltInEmailServices object with user input
-            //var mailTransfer = new BuiltInEmailServices(fromAddress, toAddress, subject, content, gmailAppPassword);
-            //mailTransfer.MessageTransfer();
+            var mailTransfer = new BuiltInEmailServices(fromAddress, toAddress, subject, content, gmailAppPassword);
+            mailTransfer.MessageTransfer();
 
             //Create the MailAutomatedEmail object with user input
-            var email = new MailKitService(fromAddress, toAddress, subject, content, gmailAppPassword);
-            email.SendEmail();
+            //var email = new MailKitService(fromAddress, toAddress, subject, content, gmailAppPassword);
+            //email.SendEmail();
 
 
         }

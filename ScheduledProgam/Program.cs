@@ -9,8 +9,8 @@ namespace ScheduledProgram
     {
         static void Main(string[] args)
         {
-            //var test = new MessageTransfer();
-            //test.SendEmail();
+            var test = new MessageTransfer();
+            test.SendEmail();
 
             // List<PatientDetails> details = new List<PatientDetails>();
 
@@ -19,10 +19,10 @@ namespace ScheduledProgram
 
 
             //PatientsRepository patients = new PatientsRepository();
-           // patients.GetPatients();
+            // patients.GetPatients();
 
-            PatientsMenus repo = new PatientsMenus();
-            repo.Options();
+            //PatientsMenus repo = new PatientsMenus();
+            //repo.Options();
 
 
         }
