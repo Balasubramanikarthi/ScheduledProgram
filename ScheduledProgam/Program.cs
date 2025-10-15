@@ -9,13 +9,13 @@ namespace ScheduledProgram
     {
         static void Main(string[] args)
         {
-            var test = new MessageTransfer();
-            test.SendEmail();
+            //var test = new MessageTransfer();
+            //test.SendEmail();
 
             // List<PatientDetails> details = new List<PatientDetails>();
 
-            //JsonCRUDprogram list = new JsonCRUDprogram();
-            //list.ChooseOption();
+            JsonCRUDprogram list = new JsonCRUDprogram();
+            list.ChooseOption();
 
 
             //PatientsRepository patients = new PatientsRepository();
