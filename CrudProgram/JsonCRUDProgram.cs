@@ -102,15 +102,15 @@ namespace CrudProgram
                     Console.Write("Email: ");
                     string email = Console.ReadLine();
 
-                    if (Duplicate(mobile, email))
+                    if (Duplicate(mobile, email))       //id
                     {
                         Console.WriteLine("This mobile number or email already exists! Patient not added.\n");
                         return;
                     }
-
-                    patient.MobileNumber = mobile;
+                    patient.Mobile = mobile;
                     patient.Email = email;
-
+                    
+                
                     patients.Add(patient);
                     SaveData(patients);
 
@@ -123,7 +123,7 @@ namespace CrudProgram
                     Console.Write("\nEnter the Mobile Number of the patient to update: ");
                     long mobile = Convert.ToInt64(Console.ReadLine());
 
-                    var patient = patients.FirstOrDefault(p => p.MobileNumber == mobile);
+                    var patient = patients.FirstOrDefault(p => p.Mobile == mobile);
                     if (patient == null)
                     {
                         Console.WriteLine("Patient not found.");
@@ -158,15 +158,20 @@ namespace CrudProgram
 
                 public void DeleteDetails()
                 {
+
+            Console.Write("Enter The Id of the Patient to delete: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
                     Console.Write("\nEnter the Mobile Number of the patient to delete: ");
                     long mobile = Convert.ToInt64(Console.ReadLine());
 
-                    var patient = patients.FirstOrDefault(p => p.MobileNumber == mobile);
-                    if (patient == null)
-                    {
-                        Console.WriteLine("Patient not found.");
-                        return;
-                    }
+                    var patient = patients.FirstOrDefault(p => p.Mobile == mobile);
+                    
+                if (patient == null)
+                {
+                  Console.WriteLine("Patient not found.");
+                  return;
+                }
 
                     patients.Remove(patient);
                     SaveData(patients);
@@ -188,7 +193,7 @@ namespace CrudProgram
                         Console.WriteLine("-----------------------------");
                         Console.WriteLine($"Name: {p.Name}");
                         Console.WriteLine($"Age: {p.Age}");
-                        Console.WriteLine($"Mobile: {p.MobileNumber}");
+                        Console.WriteLine($"Mobile: {p.Mobile}");
                         Console.WriteLine($"Email: {p.Email}");
                     }
                 }
@@ -198,7 +203,7 @@ namespace CrudProgram
                     Console.Write("\nEnter the Mobile Number to search: ");
                     long mobile = Convert.ToInt64(Console.ReadLine());
 
-                    var patient = patients.FirstOrDefault(p => p.MobileNumber == mobile);
+                    var patient = patients.FirstOrDefault(p => p.Mobile == mobile);
                     if (patient == null)
                     {
                         Console.WriteLine("No patient found with the given mobile number.");
@@ -208,13 +213,13 @@ namespace CrudProgram
                     Console.WriteLine("-----------------------------");
                     Console.WriteLine($"Name: {patient.Name}");
                     Console.WriteLine($"Age: {patient.Age}");
-                    Console.WriteLine($"Mobile: {patient.MobileNumber}");
+                    Console.WriteLine($"Mobile: {patient.Mobile}");
                     Console.WriteLine($"Email: {patient.Email}");
                 }
 
                 public bool Duplicate(long mobile, string email)
                 {
-                    return patients.Any(p => p.MobileNumber == mobile || p.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+                    return patients.Any( p => p.Mobile == mobile || p.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
                 }
 
                 public List<PatientDetails> LoadData()
